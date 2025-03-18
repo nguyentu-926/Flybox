@@ -11,7 +11,8 @@ class SignupScreen extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/login.jpg"), // Hình nền máy bay
+                image:
+                    AssetImage("assets/images/login1.jpg"), // Hình nền máy bay
                 fit: BoxFit.cover,
               ),
             ),
@@ -22,7 +23,9 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.flight_takeoff, size: 80, color: Colors.redAccent), // Icon máy bay cất cánh
+                  Icon(Icons.flight_takeoff,
+                      size: 80,
+                      color: Colors.redAccent), // Icon máy bay cất cánh
                   const SizedBox(height: 10),
                   Text(
                     "Register Now",
@@ -34,7 +37,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "Create your TravelBox account",
+                    "Create your FlyBox account",
                     style: GoogleFonts.poppins(color: Colors.white70),
                   ),
                   const SizedBox(height: 30),
@@ -46,7 +49,8 @@ class SignupScreen extends StatelessWidget {
                       fillColor: Colors.white.withOpacity(0.8),
                       hintText: "Full Name",
                       prefixIcon: Icon(Icons.person, color: Colors.redAccent),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -58,7 +62,8 @@ class SignupScreen extends StatelessWidget {
                       fillColor: Colors.white.withOpacity(0.8),
                       hintText: "Email",
                       prefixIcon: Icon(Icons.email, color: Colors.redAccent),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -71,7 +76,8 @@ class SignupScreen extends StatelessWidget {
                       fillColor: Colors.white.withOpacity(0.8),
                       hintText: "Password",
                       prefixIcon: Icon(Icons.lock, color: Colors.redAccent),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -83,12 +89,15 @@ class SignupScreen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
-                      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                     child: Text(
                       "Sign Up",
-                      style: GoogleFonts.poppins(color: Colors.white, fontSize: 18),
+                      style: GoogleFonts.poppins(
+                          color: Colors.white, fontSize: 18),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -97,12 +106,16 @@ class SignupScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Already have an account?", style: GoogleFonts.poppins(color: Colors.white)),
+                      Text("Already have an account?",
+                          style: GoogleFonts.poppins(color: Colors.white)),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, AppRoutes.loginScreen);
                         },
-                        child: Text("Login", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.redAccent)),
+                        child: Text("Login",
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.redAccent)),
                       ),
                     ],
                   ),

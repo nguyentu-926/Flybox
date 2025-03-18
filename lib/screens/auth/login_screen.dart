@@ -12,7 +12,8 @@ class LoginScreen extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/login.jpg"), // Hình nền du lịch
+                image:
+                    AssetImage("assets/images/login1.jpg"), // Hình nền du lịch
                 fit: BoxFit.cover,
               ),
             ),
@@ -23,10 +24,11 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.airplanemode_active, size: 80, color: Colors.redAccent), // Icon máy bay
+                  Icon(Icons.airplanemode_active,
+                      size: 80, color: Colors.redAccent), // Icon máy bay
                   const SizedBox(height: 10),
                   Text(
-                    "Welcome to TravelBox",
+                    "Welcome to FlyBox",
                     style: GoogleFonts.poppins(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -47,7 +49,8 @@ class LoginScreen extends StatelessWidget {
                       fillColor: Colors.white.withOpacity(0.8),
                       hintText: "Email",
                       prefixIcon: Icon(Icons.email, color: Colors.redAccent),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -60,7 +63,8 @@ class LoginScreen extends StatelessWidget {
                       fillColor: Colors.white.withOpacity(0.8),
                       hintText: "Password",
                       prefixIcon: Icon(Icons.lock, color: Colors.redAccent),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -85,12 +89,15 @@ class LoginScreen extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.redAccent,
-                      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
                     ),
                     child: Text(
                       "Login",
-                      style: GoogleFonts.poppins(color: Colors.white, fontSize: 18),
+                      style: GoogleFonts.poppins(
+                          color: Colors.white, fontSize: 18),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -99,12 +106,16 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account?", style: GoogleFonts.poppins(color: Colors.white)),
+                      Text("Don't have an account?",
+                          style: GoogleFonts.poppins(color: Colors.white)),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, AppRoutes.signupScreen);
                         },
-                        child: Text("Sign Up", style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.redAccent)),
+                        child: Text("Sign Up",
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.redAccent)),
                       ),
                     ],
                   ),
