@@ -84,6 +84,7 @@ flutter:
     - assets/images/u22.png
     - assets/images/svg/
     - assets/images/tutu.jpg
+    - assets/images/login.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

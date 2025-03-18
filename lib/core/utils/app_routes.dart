@@ -1,7 +1,9 @@
 class AppRoutes {
-  static const homeScreen = "/";
-  static const allTicketsScreen = "/all_tickets_screen";
-  static const ticketScreen = "/ticket_screen";
-  static const allHotelsScreen = "/all_hotels_screen";
-  static const hotelDetailsScreen = "/hotel_details_screen";
+  static const String loginScreen = '/login';
+  static const String signupScreen = '/signup';
+  static const String homeScreen = '/home';
+  static const String allTicketsScreen = '/all_tickets';
+  static const String ticketScreen = '/ticket';
+  static const String allHotelsScreen = '/all_hotels';
+  static const String hotelDetailsScreen = '/hotel_details';
 }
