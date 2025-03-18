@@ -7,7 +7,7 @@ import 'package:flightbookapp/screens/ticket/ticket_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flightbookapp/core/bottom_nav_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flightbookapp/screens/profile/profile_screen.dart';
 void main() {
   runApp(const MyApp());
 }
