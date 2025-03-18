@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text('Hồ sơ cá nhân', style: TextStyle(color: Colors.white)),
@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                         backgroundColor: Colors.grey.shade300,
                         child: ClipOval(
                           child: Image.asset(
-                            'assets/images/add.jpg',
+                            'assets/images/tutu.jpg',
                             width: 100,
                             height: 100,
                             fit: BoxFit.cover,
@@ -46,11 +46,16 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(height: 10),
                       Text(
                         'Nguyễn Thị Cẩm Tú',
-                        style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'Thành viên VIP',
-                        style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.redAccent,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -84,11 +89,14 @@ class ProfileScreen extends StatelessWidget {
                                 SizedBox(width: 8),
                                 Text(
                                   'ĐẶC QUYỀN',
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
-                            Icon(Icons.arrow_forward_ios, size: 18, color: Colors.grey),
+                            Icon(Icons.arrow_forward_ios,
+                                size: 18, color: Colors.grey),
                           ],
                         ),
                         Divider(color: Colors.grey.shade300, thickness: 1),
@@ -104,7 +112,10 @@ class ProfileScreen extends StatelessWidget {
                         SizedBox(height: 8),
                         Text(
                           '9992348190631070',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                         ),
                       ],
                     ),
@@ -118,15 +129,24 @@ class ProfileScreen extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.all(16),
                   children: [
-                    _buildMenuItem(context, Icons.flight_takeoff, 'Đặt vé', BookingPage()),
-                    _buildMenuItem(context, Icons.history, 'Lịch sử vé', HistoryPage()),
-                    _buildMenuItem(context, Icons.local_offer, 'Ưu đãi', OffersPage()),
-                    _buildMenuItem(context, Icons.card_giftcard, 'Quà tặng', GiftPage()),
-                    _buildMenuItem(context, Icons.account_circle, 'Hồ sơ', ProfileDetailsPage()),
-                    _buildMenuItem(context, Icons.settings, 'Cài đặt', SettingsPage()),
-                    _buildMenuItem(context, Icons.help_outline, 'Trợ giúp', HelpPage()),
-                    _buildMenuItem(context, Icons.phone, 'Liên hệ', ContactPage()),
-                    _buildMenuItem(context, Icons.exit_to_app, 'Đăng xuất', LogoutPage()),
+                    _buildMenuItem(
+                        context, Icons.flight_takeoff, 'Đặt vé', BookingPage()),
+                    _buildMenuItem(
+                        context, Icons.history, 'Lịch sử vé', HistoryPage()),
+                    _buildMenuItem(
+                        context, Icons.local_offer, 'Ưu đãi', OffersPage()),
+                    _buildMenuItem(
+                        context, Icons.card_giftcard, 'Quà tặng', GiftPage()),
+                    _buildMenuItem(context, Icons.account_circle, 'Hồ sơ',
+                        ProfileDetailsPage()),
+                    _buildMenuItem(
+                        context, Icons.settings, 'Cài đặt', SettingsPage()),
+                    _buildMenuItem(
+                        context, Icons.help_outline, 'Trợ giúp', HelpPage()),
+                    _buildMenuItem(
+                        context, Icons.phone, 'Liên hệ', ContactPage()),
+                    _buildMenuItem(
+                        context, Icons.exit_to_app, 'Đăng xuất', LogoutPage()),
                   ],
                 ),
               ],
@@ -137,7 +157,8 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(BuildContext context, IconData icon, String title, Widget page) {
+  Widget _buildMenuItem(
+      BuildContext context, IconData icon, String title, Widget page) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -241,4 +262,3 @@ Widget _buildPage(BuildContext context, String title) {
     ),
   );
 }
-

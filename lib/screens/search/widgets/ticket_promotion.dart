@@ -1,7 +1,6 @@
 import 'package:flightbookapp/core/res/app_media.dart';
 import 'package:flightbookapp/core/res/styles/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class TicketPromotion extends StatelessWidget {
   const TicketPromotion({super.key});
@@ -13,107 +12,141 @@ class TicketPromotion extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-          width: size.width * .45,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.shade200, blurRadius: 1, spreadRadius: 2)
-              ]),
-          child: Column(
-            children: [
-              Container(
-                  height: 190,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    image: DecorationImage(
-                        image: AssetImage(AppMedia.birthday),
-                        fit: BoxFit.cover),
-                  )),
-              SizedBox(
-                height: 12,
-              ),
-              Text(
-                "Mừng sinh nhật 1 năm, giảm ngay 20%. Đừng bỏ lỡ!",
-                style: AppTheme.headLineStyle2,
-              )
-            ],
-          ),
+        _buildPromoCard(
+          size,
+          image: AppMedia.birthday,
+          text: "Mừng sinh nhật 1 năm, giảm ngay 20%. Đừng bỏ lỡ!",
+          onTap: () {
+            print("Nhấn vào ưu đãi sinh nhật!");
+          },
         ),
         Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  width: size.width * .45,
-                  decoration: BoxDecoration(
-                      color: Colors.deepOrange.shade800,
-                      borderRadius: BorderRadius.circular(18)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Ưu đãi thành viên mới, đăng kí ngay thôi!",
-                        style: AppTheme.headLineStyle2.copyWith(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Sách balo và Flybox ngay thôi!",
-                        style: AppTheme.headLineStyle2.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                            fontSize: 18),
-                      ),
-                    ],
-                  ),
-                ),
-                Positioned(
-                  right: -45,
-                  top: -35,
-                  child: Container(
-                    padding: EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                            width: 18, color: Colors.deepOrange.shade900)),
-                  ),
-                )
-              ],
+            _buildPromoCard(
+              size,
+              text: "Ưu đãi thành viên mới, đăng kí ngay thôi!",
+              subText: "Sách balo và Flybox ngay thôi!",
+              color: Colors.deepOrange.shade800,
+              borderColor: Colors.deepOrange.shade900,
+              isStacked: true,
+              onTap: () {
+                print("Nhấn vào ưu đãi thành viên mới!");
+              },
             ),
-            SizedBox(
-              height: 10,
+            SizedBox(height: 10),
+            _buildPromoCard(
+              size,
+              text: "Đà Lạt gì chưa người đẹp!",
+              image: AppMedia.dalat,
+              color: Colors.pink.shade500,
+              onTap: () {
+                print("Nhấn vào ưu đãi Đà Lạt!");
+              },
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              width: size.width * 0.44,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: Colors.pink.shade500),
-              child: Column(
-                children: [
-                  Text(
-                    "Đà Lạt gì chưa người đẹp!",
-                    style:
-                        AppTheme.headLineStyle2.copyWith(color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Image(
-                      width: 90, height: 90, image: AssetImage(AppMedia.dalat))
-                ],
-              ),
-            )
           ],
         )
       ],
+    );
+  }
+
+  /// Widget tạo thẻ khuyến mãi
+  Widget _buildPromoCard(
+    Size size, {
+    String? image,
+    required String text,
+    String? subText,
+    Color color = Colors.white,
+    Color? borderColor,
+    bool isStacked = false,
+    VoidCallback? onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        width: size.width * .45,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: color,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              blurRadius: 3,
+              spreadRadius: 2,
+            )
+          ],
+          border: borderColor != null
+              ? Border.all(color: borderColor, width: 2)
+              : null,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (image != null)
+              Container(
+                height: 190,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            if (isStacked)
+              Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          text,
+                          style: AppTheme.headLineStyle2.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        if (subText != null)
+                          Text(
+                            subText,
+                            style: AppTheme.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    right: -45,
+                    top: -35,
+                    child: Container(
+                      padding: EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(width: 18, color: borderColor!),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            else
+              Padding(
+                padding: EdgeInsets.only(top: 12),
+                child: Text(
+                  text,
+                  style: AppTheme.headLineStyle2.copyWith(
+                    color: color == Colors.white ? Colors.black : Colors.white,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
     );
   }
 }

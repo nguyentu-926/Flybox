@@ -6,16 +6,23 @@ class FindTickets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 18, horizontal: 18),
-      child: Center(
-        child: Text(
-          "Tìm kiếm",
-          style: AppTheme.textStyle.copyWith(color: Colors.white),
+    return GestureDetector(
+      onTap: () {
+        print("Tìm kiếm chuyến bay...");
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 18, horizontal: 18),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.red.shade800,
+        ),
+        child: Center(
+          child: Text(
+            "Tìm kiếm",
+            style: AppTheme.textStyle.copyWith(color: Colors.white),
+          ),
         ),
       ),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.red.shade800),
     );
   }
 }
