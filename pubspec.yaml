@@ -79,6 +79,8 @@ flutter:
     - assets/images/alpes.jpg
     - assets/images/nederland.jpg
     - assets/images/phct.jpg
+    - assets/images/add.jpg
+    - assets/images/u22.png
     - assets/images/svg/
   #   - images/a_dot_ham.jpeg
 
