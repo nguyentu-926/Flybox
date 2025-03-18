@@ -5,6 +5,7 @@ import 'package:flightbookapp/screens/search/search_screen.dart';
 import 'package:flightbookapp/screens/ticket/ticket_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flightbookapp/screens/profile/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -19,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const HomeScreen(),
     const SearchScreen(),
     const TicketScreen(),
-    const Text("Profile")
+    ProfileScreen(),
   ];
 
   // change screens index for BottomNavBar
