@@ -27,6 +27,14 @@ Tích hợp nâng cao bảo mật , đảm bảo thông tin cá nhân và giao d
 
 Cho phép người dùng lưu trữ và xem lại vé đã đặt , giúp dễ dàng quản lý lịch trình.
 
-## 3. Công nghệ sử dụng
-Backend:
+## 3. Ngôn ngữ sử dụng
+- Dart, laravel
+## 4. Link báo cáo, slide
+- Link báo cáo: https://docs.google.com/document/d/12oo81RlULoNdpyzjdwZWhm0okajllc79/edit
+
+- Link silde: https://www.canva.com/design/DAGgQc1mWH4/aKprwt9gBeEY7R7W4N84nQ/edit?utm_content=DAGgQc1mWH4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+## 4. Thành viên: 
+1. Nguyễn Thị Cẩm Tú - 22010230
+2. Phạm Thị Vân Anh - 22010048
+3. Trần Thị Thùy Trang - 22010230
 
