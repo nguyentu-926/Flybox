@@ -36,5 +36,5 @@ Cho phép người dùng lưu trữ và xem lại vé đã đặt , giúp dễ d
 ## 4. Thành viên: 
 1. Nguyễn Thị Cẩm Tú - 22010230
 2. Phạm Thị Vân Anh - 22010048
-3. Trần Thị Thùy Trang - 22010230
+3. Trần Thị Thùy Trang - 22010294
 
